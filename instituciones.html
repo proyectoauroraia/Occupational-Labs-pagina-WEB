@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instituciones | Occupational Labs</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --color-primary: #0f766e;
+            --color-primary-light: #14b8a6;
+            --color-dark: #0f172a;
+            --color-text: #334155;
+            --color-text-light: #64748b;
+            --color-bg: #f8fafc;
+            --color-surface: #ffffff;
+            --radius-md: 12px;
+            --radius-xl: 24px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        html {
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Playfair Display", serif;
+            color: var(--color-dark);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        p {
+            margin: 0 0 1.5rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #14b8a6 50%, #0f766e 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: 0.12;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+
+        .bg3 {
+            animation-duration: 5s;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+
+            100% {
+                transform: translateX(25%);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 16px;
+            margin: 0 auto;
+            width: 92%;
+            max-width: 1200px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 12px 24px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-dark);
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .nav-brand-main {
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-cta {
+            background: var(--color-dark);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .navbar {
+                width: 95%;
+                top: 10px;
+                padding: 12px 16px;
+            }
+        }
+
+        header {
+            position: relative;
+            padding: 140px 24px 80px;
+            margin-top: -90px;
+            background: transparent;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(20, 184, 166, 0.15);
+            color: var(--color-primary);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--color-dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--color-primary);
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .kicker {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--color-text-light);
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(20, 184, 166, 0.2);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--color-text-light);
+            margin-bottom: 20px;
+        }
+
+        .service-card ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--color-text-light);
+        }
+
+        .service-card li {
+            margin-bottom: 8px;
+        }
+
+        .cta-section {
+            background: linear-gradient(145deg, #0f172a, #1e293b);
+            border-radius: var(--radius-xl);
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-methods {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            background: var(--color-primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.4);
+        }
+
+        .contact-btn:hover {
+            background: var(--color-primary-light);
+            transform: translateY(-2px);
+        }
+
+        .contact-btn-secondary {
+            background: white;
+            color: var(--color-dark);
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-btn-secondary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background: white;
+        }
+
+        footer {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            color: var(--color-dark);
+            font-weight: 500;
+        }
+
+        footer small {
+            color: var(--color-text-light);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <nav class="navbar animate-in" style="animation-delay: 0s;">
+        <div class="nav-brand">
+            <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                <img src="logo.png" alt="Occupational Labs Logo"
+                    style="width: 40px; height: 40px; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="nav-brand-text">
+                    <span class="nav-brand-main">Occupational Labs</span>
+                </div>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#cursos">Cursos</a>
+            <a href="index.html#sobre">Visión</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+        <a href="index.html" class="nav-cta">← Volver al inicio</a>
+    </nav>
+
+    <header>
+        <div class="hero-content animate-in" style="animation-delay: 0.1s;">
+            <span class="hero-tag">Capacitación Institucional</span>
+            <h1>Talleres y Formación <span>Personalizada</span></h1>
+            <p>Transformamos organizaciones educativas y de salud a través de capacitaciones diseñadas para integrar
+                tecnología, espiritualidad y humanismo.</p>
+        </div>
+    </header>
+
+    <section class="section-container">
+        <div class="section-header">
+            <span class="kicker">Nuestros Servicios</span>
+            <h2>Capacitaciones Especializadas</h2>
+            <p>Programas diseñados a medida para las necesidades de tu institución.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>IA en Educación Superior</h3>
+                <p>Formación docente para integrar la inteligencia artificial de forma ética y pedagógica.</p>
+                <ul>
+                    <li>Prompts pedagógicos efectivos</li>
+                    <li>Diseño de experiencias de aprendizaje con IA</li>
+                    <li>Evaluación y retroalimentación asistida</li>
+                    <li>Ética y humanismo digital</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🧘</div>
+                <h3>Espiritualidad en Salud</h3>
+                <p>Herramientas prácticas para profesionales de la salud en regulación emocional y acompañamiento.</p>
+                <ul>
+                    <li>Mindfulness para equipos clínicos</li>
+                    <li>Sentido espiritual en la práctica</li>
+                    <li>Prevención del burnout</li>
+                    <li>Acompañamiento compasivo</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📚</div>
+                <h3>Diseño Instruccional</h3>
+                <p>Creación de experiencias educativas significativas que integran tecnología y sentido humano.</p>
+                <ul>
+                    <li>Microlearning y aprendizaje activo</li>
+                    <li>Evaluación auténtica</li>
+                    <li>Storytelling educativo</li>
+                    <li>Recursos digitales accesibles</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>Innovación Educativa</h3>
+                <p>Acompañamiento en procesos de transformación digital con enfoque humanista.</p>
+                <ul>
+                    <li>Estrategias de cambio organizacional</li>
+                    <li>Comunidades de práctica</li>
+                    <li>Cultura de innovación</li>
+                    <li>Medición de impacto</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Bienestar Docente</h3>
+                <p>Programas de autocuidado y desarrollo profesional para educadores.</p>
+                <ul>
+                    <li>Gestión emocional en el aula</li>
+                    <li>Propósito y vocación educativa</li>
+                    <li>Equilibrio vida-trabajo</li>
+                    <li>Desarrollo de resiliencia</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Talleres In-House</h3>
+                <p>Sesiones interactivas adaptadas a los objetivos específicos de tu organización.</p>
+                <ul>
+                    <li>Formato presencial o virtual</li>
+                    <li>Duración flexible (medio día a semanas)</li>
+                    <li>Certificación de participación</li>
+                    <li>Material didáctico incluido</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>¿Listo para transformar tu institución?</h2>
+            <p>Conversemos sobre cómo podemos diseñar una experiencia formativa que realmente marque la diferencia para
+                tu equipo.</p>
+            <div class="contact-methods">
+                <a href="mailto:contacto@occupationallabs.com" class="contact-btn">
+                    📧 Enviar correo
+                </a>
+                <a href="https://wa.me/56912345678" class="contact-btn contact-btn-secondary">
+                    💬 WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="logo.png" alt="Occupational Labs Logo"
+            style="margin: 0 auto 16px; width: 36px; height: 36px; display: block; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <p>Occupational Labs</p>
+        <small>© 2025. Formación y tecnología al servicio de una educación más humana.</small>
+    </footer>
+
+</body>
+
+</html>

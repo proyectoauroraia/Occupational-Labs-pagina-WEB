@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Occupational Labs | IA y Humanismo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --color-primary: #0f766e;
+            --color-primary-light: #14b8a6;
+            --color-dark: #0f172a;
+            --color-text: #334155;
+            --color-text-light: #64748b;
+            --color-bg: #f8fafc;
+            --color-surface: #ffffff;
+            --radius-md: 12px;
+            --radius-xl: 24px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        html {
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Playfair Display", serif;
+            color: var(--color-dark);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        p {
+            margin: 0 0 1.5rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #14b8a6 50%, #0f766e 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: 0.12;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+
+        .bg3 {
+            animation-duration: 5s;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+
+            100% {
+                transform: translateX(25%);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 16px;
+            margin: 0 auto;
+            width: 92%;
+            max-width: 1200px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 12px 24px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-dark);
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .nav-brand-main {
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-cta {
+            background: var(--color-dark);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .navbar {
+                width: 95%;
+                top: 10px;
+                padding: 12px 16px;
+            }
+        }
+
+        header {
+            position: relative;
+            padding: 140px 24px 100px;
+            margin-top: -90px;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(20, 184, 166, 0.15);
+            color: var(--color-primary);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--color-dark);
+        }
+
+        .hero-text h1 span {
+            color: var(--color-primary);
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--color-text-light);
+            max-width: 540px;
+            margin-bottom: 32px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-weight: 600;
+            background: white;
+            color: var(--color-dark);
+            border: 1px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-img-frame {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transform: rotate(-2deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-img-frame:hover {
+            transform: rotate(0deg);
+        }
+
+        .hero-img-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: contrast(1.05);
+        }
+
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 32px;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-img-frame {
+                transform: rotate(0);
+                margin-top: 40px;
+            }
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .kicker {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--color-text-light);
+            font-size: 1.05rem;
+        }
+
+        .grid-courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--color-surface);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(20, 184, 166, 0.2);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: var(--color-bg);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+        }
+
+        .card-image {
+            margin: -32px -32px 24px -32px;
+            background: #f1f5f9;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            max-height: 220px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            flex-grow: 1;
+        }
+
+        .udemy-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            background: var(--color-dark);
+            color: white;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .udemy-btn:hover {
+            background: #334155;
+        }
+
+        .btn-disabled {
+            background: #cbd5e1;
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .grid-about {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 24px;
+        }
+
+        .about-card-lg {
+            grid-column: span 2;
+            background: linear-gradient(145deg, #0f172a, #1e293b);
+            color: white;
+        }
+
+        .about-card-lg h3 {
+            color: white;
+        }
+
+        .about-card-lg p {
+            color: #94a3b8;
+        }
+
+        .about-img-card {
+            height: 100%;
+            min-height: 300px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+        }
+
+        .about-img-overlay h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .about-img-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .grid-about {
+                grid-template-columns: 1fr;
+            }
+
+            .about-card-lg {
+                grid-column: auto;
+            }
+        }
+
+        footer {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            color: var(--color-dark);
+            font-weight: 500;
+        }
+
+        footer small {
+            color: var(--color-text-light);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <nav class="navbar animate-in" style="animation-delay: 0s;">
+        <div class="nav-brand">
+            <img src="logo.png" alt="Occupational Labs Logo"
+                style="width: 40px; height: 40px; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <div class="nav-brand-text">
+                <span class="nav-brand-main">Occupational Labs</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#cursos">Cursos</a>
+            <a href="#sobre">Visión</a>
+            <a href="instituciones.html">Instituciones</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <a href="#cursos" class="nav-cta">Explorar Cursos</a>
+    </nav>
+
+    <header>
+        <div class="hero-inner animate-in" style="animation-delay: 0.1s;">
+            <div class="hero-text">
+                <span class="hero-tag">IA · Espiritualidad · Educación Superior</span>
+                <h1>Una educación más humana en tiempos de <span>Inteligencia Artificial</span>.</h1>
+                <p>Formamos a docentes y profesionales de la salud para integrar la tecnología de forma ética,
+                    consciente y alineada con el sentido profundo de su vocación.</p>
+                <div class="hero-actions">
+                    <a href="#cursos" class="btn-primary">Ver cursos disponibles</a>
+                    <a href="instituciones.html" class="btn-secondary">Instituciones</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-img-frame">
+                    <img src="https://images.pexels.com/photos/7972542/pexels-photo-7972542.jpeg"
+                        alt="Docente enseñando con tecnología" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="cursos" class="section-container">
+        <div class="section-header">
+            <span class="kicker">Formación Online</span>
+            <h2>Nuestros Cursos</h2>
+            <p>Diseñados para recuperar el sentido humano en entornos digitales.</p>
+        </div>
+        <div class="grid-courses">
+            <article class="card">
+                <span class="card-badge">Destacado</span>
+                <div class="card-image">
+                    <img src="ia-consciente.jpg" alt="IA Consciente - Educación con Propósito">
+                </div>
+                <h3>IA Consciente: Educación con Propósito</h3>
+                <p>Aprende a utilizar la IA como una herramienta que amplifica tu presencia docente, no que la
+                    sustituye. Ética, prompts pedagógicos y humanismo digital.</p>
+                <a href="#" class="udemy-btn">Ir al curso en Udemy</a>
+            </article>
+            <article class="card" style="border-style: dashed;">
+                <span class="card-badge">Próximamente</span>
+                <div class="card-image" style="background: #f0fdfa;">
+                    <img src="espiritualidad-salud.jpg" alt="Espiritualidad en Salud">
+                </div>
+                <h3>Espiritualidad en Salud</h3>
+                <p>Herramientas prácticas para la regulación emocional, el acompañamiento y el sentido espiritual en la
+                    práctica clínica diaria.</p>
+                <div class="udemy-btn btn-disabled">Disponible pronto</div>
+            </article>
+        </div>
+    </section>
+
+    <section id="sobre" class="section-container" style="padding-top:0;">
+        <div class="section-header">
+            <span class="kicker">El Laboratorio</span>
+            <h2>Sobre Nosotros</h2>
+        </div>
+        <div class="grid-about">
+            <article class="card about-card-lg">
+                <h3>Occupational Labs</h3>
+                <p>Somos un laboratorio creativo dirigido por <strong>José Rojas</strong>, Terapeuta Ocupacional y
+                    magíster en Educación Superior. Creemos que la tecnología, aplicada con criterio y propósito,
+                    potencia nuestra humanidad.</p>
+                <p>En Occupational Labs trabajamos en la convergencia de cuatro áreas: <strong>educación
+                        superior</strong>, <strong>diseño</strong>, <strong>espiritualidad aplicada</strong> e
+                    <strong>inteligencia artificial</strong>, desarrollando soluciones que integran rigor académico,
+                    sentido humano y visión tecnológica.
+                </p>
+                <p style="margin-bottom:0;">Nuestro enfoque combina experiencia clínica, investigación y diseño para
+                    crear herramientas que realmente transforman la práctica profesional.</p>
+            </article>
+            <div class="about-img-card">
+                <img src="https://images.pexels.com/photos/3184324/pexels-photo-3184324.jpeg"
+                    alt="Equipo colaborando" />
+                <div class="about-img-overlay">
+                    <h3>Comunidad</h3>
+                    <p>Espacios de reflexión docente.</p>
+                </div>
+            </div>
+            <div class="about-img-card">
+                <img src="https://images.pexels.com/photos/3820409/pexels-photo-3820409.jpeg" alt="Calma y salud" />
+                <div class="about-img-overlay">
+                    <h3>Bienestar</h3>
+                    <p>Salud mental y propósito.</p>
+                </div>
+            </div>
+            <article class="card">
+                <h3>Nuestra Visión</h3>
+                <p style="margin-bottom:0;">Que cada profesional de la salud y la educación encuentre en la tecnología
+                    un aliado para amplificar su compasión y creatividad.</p>
+            </article>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <img src="logo.png" alt="Occupational Labs Logo"
+            style="margin: 0 auto 16px; width: 36px; height: 36px; display: block; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <p>Occupational Labs</p>
+        <small>© 2025. Formación y tecnología al servicio de una educación más humana.</small>
+    </footer>
+
+</body>
+
+</html>
