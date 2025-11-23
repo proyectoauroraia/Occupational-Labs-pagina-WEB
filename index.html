@@ -524,6 +524,59 @@
         footer small {
             color: var(--color-text-light);
         }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(15, 118, 110, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .back-to-top:hover {
+            background: var(--color-primary-light);
+            transform: scale(1.1);
+            box-shadow: 0 12px 28px rgba(15, 118, 110, 0.4);
+        }
+
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+
+            .back-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -649,6 +702,41 @@
         <p>Occupational Labs</p>
         <small>© 2025. Formación y tecnología al servicio de una educación más humana.</small>
     </footer>
+
+
+    <button class="back-to-top" id="backToTop" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        const scrollThreshold = 300; // Show button after scrolling 300px
+
+        function updateBackToTopButton() {
+            if (window.pageYOffset > scrollThreshold) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        }
+
+        // Check on scroll
+        window.addEventListener('scroll', updateBackToTopButton);
+
+        // Smooth scroll to top when clicked
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Initial check on page load
+        updateBackToTopButton();
+    </script>
 
 </body>
 
