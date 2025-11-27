@@ -508,28 +508,226 @@
                 </ul>
             </div>
         </div>
+        .service-card ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--color-text-light);
+        }
 
-        <div class="cta-section">
-            <h2>¿Listo para transformar tu institución?</h2>
-            <p>Contáctanos para diseñar una propuesta a la medida de tus necesidades.</p>
-            <div class="contact-methods">
-                <a href="mailto:contacto@occupationallabs.com" class="contact-btn">
-                    📧 Enviar correo
-                </a>
-                <a href="https://wa.me/56912345678" class="contact-btn contact-btn-secondary">
-                    💬 WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
+        .service-card li {
+        margin-bottom: 8px;
+        }
 
-    <footer>
-        <img src="logo.png" alt="Occupational Labs Logo"
-            style="margin: 0 auto 16px; width: 36px; height: 36px; display: block; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <p>Occupational Labs</p>
-        <small>© 2025. Formación y tecnología al servicio de una educación más humana.</small>
-    </footer>
+        .cta-section {
+        background: linear-gradient(145deg, #0f172a, #1e293b);
+        border-radius: var(--radius-xl);
+        padding: 60px 40px;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        }
 
-</body>
+        .cta-section h2 {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 16px;
+        }
+
+        .cta-section p {
+        color: #94a3b8;
+        font-size: 1.1rem;
+        margin-bottom: 32px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        .contact-methods {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        }
+
+        .contact-btn {
+        background: var(--color-primary);
+        color: white;
+        padding: 14px 28px;
+        border-radius: 100px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.4);
+        }
+
+        .contact-btn:hover {
+        background: var(--color-primary-light);
+        transform: translateY(-2px);
+        }
+
+        .contact-btn-secondary {
+        background: white;
+        color: var(--color-dark);
+        border: 1px solid #e2e8f0;
+        }
+
+        .contact-btn-secondary:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        background: white;
+        }
+
+        footer {
+        background: white;
+        border-top: 1px solid #e2e8f0;
+        padding: 60px 24px;
+        text-align: center;
+        }
+
+        footer p {
+        margin-bottom: 8px;
+        color: var(--color-dark);
+        font-weight: 500;
+        }
+
+        footer small {
+        color: var(--color-text-light);
+        }
+
+        .service-icon.icon-green {
+        background: linear-gradient(135deg, #14b8a6, #0f766e);
+        color: white;
+        }
+
+        .service-icon.icon-orange {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        color: white;
+        }
+
+        .service-icon.icon-purple {
+        background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        color: white;
+        }
+
+        .service-icon.icon-dark {
+        background: linear-gradient(135deg, #334155, #1e293b);
+        color: white;
+        }
+        </style>
+        </head>
+
+        <body>
+
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+
+            <nav class="navbar animate-in" style="animation-delay: 0s;">
+                <div class="nav-brand">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                        <img src="logo.png" alt="Occupational Labs Logo"
+                            style="width: 40px; height: 40px; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <div class="nav-brand-text">
+                            <span class="nav-brand-main">Occupational Labs</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html#cursos">Cursos</a>
+                    <a href="index.html#sobre">Visión</a>
+                    <a href="index.html#contacto">Contacto</a>
+                </div>
+                <a href="index.html" class="nav-cta">← Volver al inicio</a>
+            </nav>
+
+            <header>
+                <div class="hero-content animate-in" style="animation-delay: 0.1s;">
+                    <span class="hero-tag">Capacitación Institucional</span>
+                    <h1>Talleres y Formación <span>Personalizada</span></h1>
+                    <p>Transformamos organizaciones educativas y de salud a través de capacitaciones diseñadas para
+                        integrar
+                        tecnología, espiritualidad y humanismo.</p>
+                </div>
+            </header>
+
+            <section class="section-container">
+                <div class="section-header">
+                    <span class="kicker">Nuestros Servicios</span>
+                    <h2>Servicios</h2>
+                    <p>Programas diseñados a medida para las necesidades de tu institución.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon icon-green">💠</div>
+                        <h3>IA y Transformación Educativa</h3>
+                        <ul>
+                            <li>Diagnóstico del uso de IA y necesidades formativas de la institución.</li>
+                            <li>Taller práctico para docentes: prompts, diseño de actividades y evaluación.</li>
+                            <li>Rediseño de asignaturas o programas con enfoque de diseño instruccional.</li>
+                            <li>Entrega de plantillas, guías y recursos listos para usar en clases.</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon icon-orange">🧘</div>
+                        <h3>Bienestar y Espiritualidad en Salud & Educación</h3>
+                        <ul>
+                            <li>Talleres de regulación emocional y prevención de burnout en equipos.</li>
+                            <li>Herramientas de acompañamiento compasivo y sentido de propósito en la práctica.</li>
+                            <li>Espacios de reflexión guiada para equipos de salud y educación.</li>
+                            <li>Plan de bienestar institucional con acciones concretas y sostenibles.</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon icon-purple">🎓</div>
+                        <h3>Talleres de IA para Estudiantes</h3>
+                        <ul>
+                            <li>Introducción a la IA generativa aplicada al estudio y la investigación.</li>
+                            <li>Buenas prácticas para evitar plagio, uso poco ético y dependencia excesiva.</li>
+                            <li>Uso de IA para organizar ideas, estudiar, resumir y preparar trabajos.</li>
+                            <li>Guías y checklist para un uso responsable alineado a la normativa institucional.</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon icon-dark">👥</div>
+                        <h3>Programas In-House a Medida</h3>
+                        <ul>
+                            <li>Definición del foco del programa según las necesidades de la organización.</li>
+                            <li>Diseño de jornadas presenciales u online (medio día o jornada completa).</li>
+                            <li>Actividades prácticas adaptadas al contexto y cultura institucional.</li>
+                            <li>Material didáctico y certificación para todos los participantes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>¿Listo para transformar tu institución?</h2>
+                    <p>Contáctanos para diseñar una propuesta a la medida de tus necesidades.</p>
+                    <div class="contact-methods">
+                        <a href="mailto:contacto@occupationalabs.cl" class="contact-btn">
+                            📧 Enviar correo
+                        </a>
+                        <a href="https://wa.me/56912345678" class="contact-btn contact-btn-secondary">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <img src="logo.png" alt="Occupational Labs Logo"
+                    style="margin: 0 auto 16px; width: 36px; height: 36px; display: block; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <p>Occupational Labs</p>
+                <p><a href="mailto:contacto@occupationalabs.cl"
+                        style="color: var(--color-text-light); font-size: 0.9rem;">contacto@occupationalabs.cl</a></p>
+                <small>© 2025. Formación y tecnología al servicio de una educación más humana.</small>
+            </footer>
+
+        </body>
 
 </html>
