@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Occupational Labs | IA y Humanismo</title>
+    <meta name="description"
+        content="Laboratorio de innovación educativa. Cursos, asesorías y capacitaciones institucionales en IA aplicada a educación y salud. Formación ética y consciente para docentes y profesionales.">
+    <meta name="keywords"
+        content="IA educación, cursos inteligencia artificial, capacitación docente IA, humanismo digital, espiritualidad educación, asesoría IA salud, occupational labs chile">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Occupational Labs | IA, Educación y Humanismo">
+    <meta property="og:description"
+        content="Laboratorio que fusiona IA, educación, diseño y espiritualidad. Cursos, asesorías y capacitaciones para profesionales.">
+    <meta property="og:image" content="https://www.occupationalabs.cl/logo.png">
+    <meta property="og:url" content="https://www.occupationalabs.cl">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Occupational Labs | IA y Humanismo">
+    <meta name="twitter:description" content="Cursos y asesorías en IA aplicada a educación y salud con enfoque ético.">
+    <title>Occupational Labs | Integración de IA, Educación y Humanismo</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
         rel="stylesheet" />
@@ -166,10 +181,16 @@
         .nav-cta {
             background: var(--color-dark);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
+            /* Increased padding */
             border-radius: 100px;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            /* Minimum 16px */
             font-weight: 600;
+            min-height: 48px;
+            /* Touch friendly */
+            display: inline-flex;
+            align-items: center;
         }
 
         .nav-cta:hover {
@@ -186,6 +207,21 @@
                 width: 95%;
                 top: 10px;
                 padding: 12px 16px;
+            }
+
+            /* Mobile Stack for Courses */
+            .grid-courses {
+                grid-template-columns: 1fr;
+                /* Force single column on mobile */
+            }
+
+            .section-container {
+                padding: 60px 20px;
+                /* Reduced padding for mobile */
+            }
+
+            .card {
+                padding: 24px;
             }
         }
 
@@ -225,6 +261,13 @@
             color: var(--color-dark);
         }
 
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2.25rem;
+                /* Slightly smaller for very small screens */
+            }
+        }
+
         .hero-text h1 span {
             color: var(--color-primary);
             font-style: italic;
@@ -235,6 +278,7 @@
             color: var(--color-text-light);
             max-width: 540px;
             margin-bottom: 32px;
+            line-height: 1.6;
         }
 
         .hero-actions {
@@ -246,10 +290,15 @@
         .btn-primary {
             background: var(--color-primary);
             color: white;
-            padding: 14px 28px;
+            padding: 16px 28px;
+            /* Detailed padding */
             border-radius: 100px;
             font-weight: 600;
             box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.4);
+            min-height: 52px;
+            /* Ensure touch target */
+            display: inline-flex;
+            align-items: center;
         }
 
         .btn-primary:hover {
@@ -264,6 +313,8 @@
             background: white;
             color: var(--color-dark);
             border: 1px solid #e2e8f0;
+            min-height: 52px;
+            /* Touch target */
         }
 
         .btn-secondary:hover {
@@ -320,6 +371,12 @@
             padding: 100px 24px;
         }
 
+        @media (max-width: 600px) {
+            .section-container {
+                padding: 60px 20px;
+            }
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 60px;
@@ -340,6 +397,12 @@
             margin-bottom: 16px;
         }
 
+        @media (max-width: 480px) {
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
         .section-header p {
             max-width: 600px;
             margin: 0 auto;
@@ -349,7 +412,8 @@
 
         .grid-courses {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* Adjusted for better wrap */
             gap: 32px;
         }
 
@@ -413,9 +477,11 @@
         }
 
         .card p {
-            font-size: 0.95rem;
+            font-size: 1rem;
+            /* Increased to 16px */
             color: var(--color-text-light);
             flex-grow: 1;
+            line-height: 1.6;
         }
 
         .udemy-btn {
@@ -423,12 +489,16 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 12px;
+            padding: 16px;
+            /* Increased padding */
             border-radius: 12px;
             background: var(--color-dark);
             color: white;
             font-weight: 600;
             margin-top: 20px;
+            min-height: 54px;
+            /* Touch target */
+            font-size: 1rem;
         }
 
         .udemy-btn:hover {
@@ -446,6 +516,13 @@
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto auto;
             gap: 24px;
+        }
+
+        /* Mobile specific adjustments for about grid */
+        @media (max-width: 900px) {
+            .grid-about {
+                grid-template-columns: 1fr;
+            }
         }
 
         .about-card-lg {
@@ -870,265 +947,536 @@
     </nav>
 
     <header>
-        <div class="hero-inner animate-in" style="animation-delay: 0.1s;">
-            <div class="hero-text">
-                <span class="hero-tag">IA · Espiritualidad · Educación Superior</span>
-                <h1>Una educación más humana en tiempos de <span>Inteligencia Artificial</span>.</h1>
+        <div style="text-align: center; max-width: 1000px; margin: 0 auto;">
 
-                <!-- NEW: Launch Banner -->
-                <div class="launch-banner animate-in" style="animation-delay: 0.2s;">
-                    <span class="launch-banner-title">🔥 LANZAMIENTO ESPECIAL</span>
-                    <span class="launch-banner-offer">30 cupos con 25% OFF</span>
+            <p
+                style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #667eea; font-weight: bold; margin-bottom: 10px;">
+                Laboratorio de Innovación Educativa
+            </p>
+
+            <h1 style="font-size: 42px; line-height: 1.2; margin-bottom: 20px; color: #1a1a1a;">
+                Integramos IA, educación y humanismo para transformar la forma en que enseñas y acompañas
+            </h1>
+
+            <p style="font-size: 20px; color: #555; line-height: 1.6; margin-bottom: 40px;">
+                Cursos, asesorías y capacitaciones para docentes y profesionales de la salud
+                que quieren usar tecnología sin perder su esencia.
+            </p>
+
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+                <div style="background: #f8f9fa; padding: 15px 25px; border-radius: 8px;">
+                    <span style="font-size: 14px; color: #667eea; font-weight: bold;">✓</span>
+                    <span style="color: #555; margin-left: 8px;">Cursos Online</span>
                 </div>
-
-                <p>Formamos a docentes y profesionales de la salud para integrar la tecnología de forma ética,
-                    consciente y alineada con el sentido profundo de su vocación.</p>
-
-                <!-- NEW: Countdown Timer -->
-                <div id="countdown" class="countdown-container animate-in" style="animation-delay: 0.3s;">
-                    <!-- JS will populate this -->
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="days">00</span>
-                        <span class="countdown-label">Días</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">00</span>
-                        <span class="countdown-label">Hrs</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">00</span>
-                        <span class="countdown-label">Min</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-label">Seg</span>
-                    </div>
+                <div style="background: #f8f9fa; padding: 15px 25px; border-radius: 8px;">
+                    <span style="font-size: 14px; color: #667eea; font-weight: bold;">✓</span>
+                    <span style="color: #555; margin-left: 8px;">Asesorías 1:1</span>
                 </div>
-
-                <div class="hero-actions animate-in" style="animation-delay: 0.4s;">
-                    <!-- MODIFIED: CTA Button -->
-                    <a href="https://www.udemy.com/course/ia-consciente-educacion-con-proposito/?couponCode=CA2AAEC54A798687F472"
-                        class="btn-cta-launch">
-                        🎟️ Acceder al 25% OFF
-                    </a>
-                    <!-- REMOVED: Old secondary button to focus on conversion, or kept if needed? 
-                         User didn't explicitly say delete secondary, but "Modificar los botones CTA".
-                         I will keep secondary as it serves navigation, but deprioritized visually or just focus on the main one as requested.
-                         The request said "Cambiar 'Ver cursos disponibles' por...", implies mainly targeting that one.
-                         However, user asked "MODIFICAR los botones CTA" (plural).
-                         I will leave the secondary button but maybe ensure it doesn't conflict. 
-                         Actually, standard high urgency pages often reduce distractions. 
-                         But I will keep it as 'Servicios' is useful. 
-                         Updated: The request says "MODIFICAR los botones CTA... Cambiar 'Ver cursos disponibles' por...".
-                         It seems to focus on the primary one. I'll leave the secondary button as is but ensure layout works.
-                    -->
-
+                <div style="background: #f8f9fa; padding: 15px 25px; border-radius: 8px;">
+                    <span style="font-size: 14px; color: #667eea; font-weight: bold;">✓</span>
+                    <span style="color: #555; margin-left: 8px;">Capacitaciones Institucionales</span>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-img-frame">
-                    <img src="https://images.pexels.com/photos/7972542/pexels-photo-7972542.jpeg"
-                        alt="Docente enseñando con tecnología" />
-                </div>
-            </div>
+
         </div>
     </header>
 
-    <section id="cursos" class="section-container">
-        <div class="section-header">
-            <span class="kicker">Formación Online</span>
-            <h2>Nuestros Cursos</h2>
-            <p>Diseñados para recuperar el sentido humano en entornos digitales.</p>
-        </div>
-        <div class="grid-courses">
-            <article class="card card-featured">
-                <span class="card-badge">Destacado</span>
-                <div class="card-image">
-                    <img src="ia-consciente.jpg" alt="IA Consciente - Educación con Propósito">
-                </div>
+    <section id="servicios" style="background: #f8f9fa; padding: 80px 20px; margin: 60px 0;">
+        <div style="max-width: 1200px; margin: 0 auto;">
 
-                <h3>IA Consciente: Educación con Propósito</h3>
-                <p>Aprende a utilizar la IA como una herramienta que amplifica tu presencia docente, no que la
-                    sustituye. Ética, prompts pedagógicos y humanismo digital.</p>
-
-                <!-- 1. Price -->
-                <div class="course-price">
-                    <span class="price-original">❌ $26.990</span>
-                    <span class="price-arrow">→</span>
-                    <span class="price-offer">✅ $19.988</span>
-                </div>
-
-                <!-- 2. Urgency -->
-                <div class="course-urgency">
-                    <span class="urgency-icon">⏳</span>
-                    <span class="urgency-text">25% OFF · Expira en <span class="card-countdown"
-                            id="card-timer">00:00:00</span></span>
-                </div>
-
-                <!-- 3. Benefits -->
-                <ul class="course-benefits">
-                    <li><span>✓</span> 1.4 horas de contenido práctico</li>
-                    <li><span>✓</span> Certificado de finalización Udemy</li>
-                    <li><span>✓</span> Material descargable (plantillas, proyectos, etc.)</li>
-                    <li><span>✓</span> Acceso de por vida y soporte via mensajes</li>
-                </ul>
-
-                <!-- 4. Scarcity -->
-                <!-- 4. Scarcity -->
-                <div class="course-scarcity">
-                    <div class="scarcity-text">
-                        <strong>Quedan pocos cupos</strong> a este precio
-                    </div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill" style="width: 40%"></div>
-                    </div>
-                    <div class="scarcity-label">12/30 cupos vendidos</div>
-                </div>
-
-                <!-- 5. CTA -->
-                <a href="https://www.udemy.com/course/ia-consciente-educacion-con-proposito/?couponCode=CA2AAEC54A798687F472"
-                    class="btn-cta-card">
-                    🎟️ Activar cupón ahora →
-                </a>
-            </article>
-            <article class="card" style="border-style: dashed;">
-                <span class="card-badge">Próximamente</span>
-                <div class="card-image" style="background: #f0fdfa;">
-                    <img src="espiritualidad-salud.jpg"
-                        alt="Introducción a la espiritualidad para profesionales de la salud">
-                </div>
-                <h3>Introducción a la espiritualidad para profesionales de la salud</h3>
-                <p>Herramientas prácticas para la regulación emocional, el acompañamiento y el sentido espiritual en la
-                    práctica clínica diaria.</p>
-                <div class="udemy-btn btn-disabled">Disponible pronto</div>
-            </article>
-        </div>
-    </section>
-
-    <section id="sobre" class="section-container" style="padding-top:0;">
-        <div class="section-header">
-            <span class="kicker">El Laboratorio</span>
-            <h2>Sobre Nosotros</h2>
-        </div>
-        <div class="grid-about">
-            <article class="card about-card-lg">
-                <h3>Occupational Labs</h3>
-                <p>Somos un laboratorio creativo dirigido por <strong>José Rojas</strong>, Terapeuta Ocupacional con más
-                    de una década de experiencia integrando la docencia, la práctica clínica y la gestión académica en
-                    entornos de educación superior y salud.</p>
-                <p>Magíster en Educación Superior, con especialización en inteligencia artificial aplicada y
-                    espiritualidad en contextos terapéuticos y formativos.</p>
-                <p>En Occupational Labs fusionamos cuatro pilares: <strong>educación</strong>, <strong>diseño</strong>,
-                    <strong>espiritualidad</strong> e <strong>IA</strong>, desarrollando soluciones que combinan sentido
-                    humano, innovación tecnológica y base académica sólida.
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 36px; margin-bottom: 15px; color: #1a1a1a;">
+                    Cómo podemos ayudarte
+                </h2>
+                <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto;">
+                    Ofrecemos soluciones integrales para docentes, instituciones educativas
+                    y profesionales de la salud que buscan innovar con sentido.
                 </p>
-                <p style="margin-bottom:0;">Diseñamos herramientas, cursos y capacitaciones orientadas a transformar la
-                    forma en que los profesionales enseñan, intervienen y acompañan procesos de aprendizaje y
-                    rehabilitación.</p>
-            </article>
-            <div class="about-img-card">
-                <img src="jose-rojas-new.jpg" alt="José Rojas" />
-                <div class="about-img-overlay">
-                    <h3>José Rojas</h3>
-                    <p>Fundador & Director</p>
-                </div>
             </div>
-            <div class="about-img-card">
-                <img src="https://images.pexels.com/photos/3820409/pexels-photo-3820409.jpeg" alt="Calma y salud" />
-                <div class="about-img-overlay">
-                    <h3>Bienestar</h3>
-                    <p>Salud mental y propósito.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                <!-- Servicio 1: Cursos -->
+                <div
+                    style="background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s;">
+                    <div
+                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <span style="font-size: 28px;">🎓</span>
+                    </div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #1a1a1a;">
+                        Cursos Online
+                    </h3>
+                    <p style="font-size: 15px; line-height: 1.6; color: #666; margin-bottom: 20px;">
+                        Formación práctica y certificada en IA aplicada a educación y salud.
+                        Aprende a tu ritmo con acceso de por vida.
+                    </p>
+                    <a href="#cursos"
+                        style="color: #667eea; text-decoration: none; font-weight: bold; font-size: 14px;">
+                        Ver cursos disponibles →
+                    </a>
                 </div>
+
+                <!-- Servicio 2: Asesorías -->
+                <div
+                    style="background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <div
+                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <span style="font-size: 28px;">💡</span>
+                    </div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #1a1a1a;">
+                        Asesorías Personalizadas
+                    </h3>
+                    <p style="font-size: 15px; line-height: 1.6; color: #666; margin-bottom: 20px;">
+                        Acompañamiento 1:1 para integrar IA en tu práctica docente o clínica.
+                        Soluciones adaptadas a tu contexto específico.
+                    </p>
+                    <a href="#contacto"
+                        style="color: #667eea; text-decoration: none; font-weight: bold; font-size: 14px;">
+                        Solicitar información →
+                    </a>
+                </div>
+
+                <!-- Servicio 3: Instituciones -->
+                <div
+                    style="background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <div
+                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <span style="font-size: 28px;">🏛️</span>
+                    </div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #1a1a1a;">
+                        Capacitaciones Institucionales
+                    </h3>
+                    <p style="font-size: 15px; line-height: 1.6; color: #666; margin-bottom: 20px;">
+                        Programas para universidades, institutos y centros de salud. Formación
+                        adaptada a las necesidades de tu organización.
+                    </p>
+                    <a href="instituciones.html"
+                        style="color: #667eea; text-decoration: none; font-weight: bold; font-size: 14px;">
+                        Ver más detalles →
+                    </a>
+                </div>
+
             </div>
-            <article class="card">
-                <h3>Nuestra Visión</h3>
-                <p style="margin-bottom:0;">Aprende a usar inteligencia artificial en tus clases o sesiones clínicas con
-                    criterio profesional, propósito humano y una visión espiritual integrada.</p>
-            </article>
+
         </div>
     </section>
 
-    <footer id="contacto">
-        <img src="logo.png" alt="Occupational Labs Logo"
-            style="margin: 0 auto 16px; width: 36px; height: 36px; display: block; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <p>Occupational Labs</p>
-        <p style="margin: 16px 0;">
-            <a href="mailto:contacto@occupationalabs.cl"
-                style="color: #0f766e; font-size: 0.95rem; font-weight: 500; text-decoration: none;">
-                contacto@occupationalabs.cl
-            </a>
-        </p>
-        <small>© 2025. Formación y tecnología al servicio de una educación más humana.</small>
-    </footer>
+    <section id="cursos" style="padding: 80px 20px; background: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+
+            <!-- Título sección -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <p
+                    style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #667eea; font-weight: bold; margin-bottom: 10px;">
+                    Formación Online
+                </p>
+                <h2 style="font-size: 36px; margin-bottom: 15px; color: #1a1a1a;">
+                    Cursos Disponibles
+                </h2>
+                <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto;">
+                    Certificaciones prácticas para integrar IA y humanismo en tu práctica profesional.
+                </p>
+            </div>
+
+            <!-- Grid de cursos -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+
+                <!-- CARD 1: IA Consciente (Destacado) -->
+                <div
+                    style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.12); position: relative; display: flex; flex-direction: column; border: 2px solid #667eea;">
+
+                    <!-- Badge destacado -->
+                    <div
+                        style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10; box-shadow: 0 4px 12px rgba(238,90,111,0.4);">
+                        🔥 25% OFF
+                    </div>
+
+                    <!-- Imagen -->
+                    <img src="ia-consciente.jpg" alt="IA Consciente"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+
+                    <!-- Contenido -->
+                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+
+                        <h3 style="font-size: 22px; margin-bottom: 12px; color: #1a1a1a; line-height: 1.3;">
+                            IA Consciente: Educación con Propósito
+                        </h3>
+
+                        <p style="font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                            Integra ChatGPT en tus clases de forma ética. Crea material didáctico,
+                            evaluaciones y personaliza el aprendizaje sin perder tu esencia pedagógica.
+                        </p>
+
+                        <!-- Highlights compactos -->
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                            <p style="margin: 0 0 8px 0; font-size: 13px; color: #555;">
+                                ✓ 1.4 horas de contenido práctico
+                            </p>
+                            <p style="margin: 0 0 8px 0; font-size: 13px; color: #555;">
+                                ✓ Prompts pedagógicos listos para usar
+                            </p>
+                            <p style="margin: 0 0 8px 0; font-size: 13px; color: #555;">
+                                ✓ Certificado Udemy incluido
+                            </p>
+                            <p style="margin: 0; font-size: 13px; color: #555;">
+                                ✓ Acceso de por vida
+                            </p>
+                        </div>
+
+                        <!-- Precio -->
+                        <div style="margin-bottom: 20px;">
+                            <p style="margin: 0; font-size: 14px; color: #999; text-decoration: line-through;">
+                                $26.990
+                            </p>
+                            <p style="margin: 5px 0 0 0; font-size: 32px; font-weight: bold; color: #667eea;">
+                                $19.988
+                            </p>
+                            <p
+                                style="margin: 5px 0 0 0; font-size: 13px; color: #856404; background: #fff3cd; display: inline-block; padding: 4px 12px; border-radius: 4px;">
+                                ⏰ Hasta el 31 de diciembre
+                            </p>
+                        </div>
+
+                        <!-- CTA -->
+                        <div style="margin-top: auto;">
+                            <a href="https://www.udemy.com/course/ia-consciente-educacion-con-proposito/?couponCode=CA2AAEC54A798687F472"
+                                style="display: block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 8px; text-align: center; box-shadow: 0 4px 16px rgba(102,126,234,0.4); transition: all 0.3s;">
+                                ✅ Acceder al curso ahora
+                            </a>
+                            <p style="text-align: center; margin: 12px 0 0 0; font-size: 12px; color: #999;">
+                                🛡️ Garantía de 30 días Udemy
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 2: Espiritualidad (Próximamente) -->
+                <div
+                    style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.12); position: relative; display: flex; flex-direction: column;">
+
+                    <!-- Badge próximamente -->
+                    <div
+                        style="position: absolute; top: 15px; right: 15px; background: #9e9e9e; color: white; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">
+                        📅 Próximamente
+                    </div>
+
+                    <!-- Imagen con overlay -->
+                    <div style="position: relative;">
+                        <img src="espiritualidad-salud.jpg" alt="Espiritualidad en Salud"
+                            style="width: 100%; height: 200px; object-fit: cover; filter: brightness(0.8);">
+                    </div>
+
+                    <!-- Contenido -->
+                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+
+                        <h3 style="font-size: 22px; margin-bottom: 12px; color: #1a1a1a; line-height: 1.3;">
+                            Introducción a la espiritualidad para profesionales de la salud
+                        </h3>
+
+                        <p style="font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                            Herramientas prácticas para regulación emocional, acompañamiento terapéutico
+                            y sentido espiritual en la práctica clínica diaria.
+                        </p>
+
+                        <!-- Info de desarrollo -->
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                            <p
+                                style="margin: 0 0 15px 0; font-size: 16px; color: #333; font-weight: bold; text-align: center;">
+                                🚧 En desarrollo
+                            </p>
+                            <p style="margin: 0 0 20px 0; font-size: 14px; color: #666; text-align: center;">
+                                Disponible primer trimestre 2025
+                            </p>
+                            <div style="text-align: center;">
+                                <a href="#contacto"
+                                    style="color: #667eea; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #667eea; padding: 12px 24px; border-radius: 8px; display: inline-block; transition: all 0.3s;">
+                                    📬 Notificarme cuando esté listo
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <section style="background: white; padding: 80px 20px; margin: 60px 0;">
+            <div style="max-width: 1000px; margin: 0 auto;">
+
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2 style="font-size: 36px; margin-bottom: 15px; color: #1a1a1a;">
+                        ¿Por qué Occupational Labs?
+                    </h2>
+                    <p style="font-size: 18px; color: #666;">
+                        No somos solo un curso. Somos un laboratorio que fusiona disciplinas para crear soluciones
+                        reales.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+
+                    <div style="text-align: center; padding: 30px;">
+                        <div
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <span style="font-size: 36px;">🎯</span>
+                        </div>
+                        <h4 style="font-size: 20px; margin-bottom: 12px; color: #1a1a1a;">
+                            Enfoque Integrador
+                        </h4>
+                        <p style="font-size: 15px; line-height: 1.6; color: #666;">
+                            Fusionamos IA, educación, diseño y espiritualidad en soluciones coherentes y prácticas.
+                        </p>
+                    </div>
+
+                    <div style="text-align: center; padding: 30px;">
+                        <div
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <span style="font-size: 36px;">🧠</span>
+                        </div>
+                        <h4 style="font-size: 20px; margin-bottom: 12px; color: #1a1a1a;">
+                            Experiencia Real
+                        </h4>
+                        <p style="font-size: 15px; line-height: 1.6; color: #666;">
+                            Más de 10 años integrando docencia universitaria, práctica clínica y gestión académica.
+                        </p>
+                    </div>
+
+                    <div style="text-align: center; padding: 30px;">
+                        <div
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <span style="font-size: 36px;">❤️</span>
+                        </div>
+                        <h4 style="font-size: 20px; margin-bottom: 12px; color: #1a1a1a;">
+                            Humanismo Digital
+                        </h4>
+                        <p style="font-size: 15px; line-height: 1.6; color: #666;">
+                            La tecnología amplifica tu presencia profesional, no la reemplaza. Ese es nuestro
+                            compromiso.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NEW: FAQ Section -->
+        <div id="faq" style="background: #f8f9fa; padding: 60px 20px; margin: 60px 0;">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 36px; text-align: center; margin-bottom: 40px;">
+                    Preguntas Frecuentes
+                </h2>
+
+                <div
+                    style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <h4 style="color: #667eea; font-size: 18px; margin-bottom: 10px;">
+                        🤔 ¿Necesito saber de tecnología o programación?
+                    </h4>
+                    <p style="color: #555; line-height: 1.6; margin: 0;">
+                        No. El curso está diseñado específicamente para docentes sin conocimientos
+                        técnicos previos. Todo se explica desde cero con ejemplos pedagógicos reales.
+                    </p>
+                </div>
+
+                <div
+                    style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <h4 style="color: #667eea; font-size: 18px; margin-bottom: 10px;">
+                        📜 ¿Qué incluye el certificado?
+                    </h4>
+                    <p style="color: #555; line-height: 1.6; margin: 0;">
+                        Certificado oficial de Udemy al completar el 100% del curso. Puedes descargarlo
+                        y compartirlo en LinkedIn o tu CV profesional.
+                    </p>
+                </div>
+
+                <div
+                    style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <h4 style="color: #667eea; font-size: 18px; margin-bottom: 10px;">
+                        📱 ¿Puedo acceder desde mi celular o tablet?
+                    </h4>
+                    <p style="color: #555; line-height: 1.6; margin: 0;">
+                        Sí, el curso funciona en cualquier dispositivo: computador, celular o tablet.
+                        Puedes verlo cuando quieras, las veces que quieras.
+                    </p>
+                </div>
+
+                <div
+                    style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <h4 style="color: #667eea; font-size: 18px; margin-bottom: 10px;">
+                        ⏱️ ¿Cuánto tiempo tengo para completarlo?
+                    </h4>
+                    <p style="color: #555; line-height: 1.6; margin: 0;">
+                        Acceso de por vida. Puedes avanzar a tu propio ritmo sin presiones.
+                        El curso dura 1.4 horas pero puedes tomarte el tiempo que necesites.
+                    </p>
+                </div>
+
+                <div
+                    style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <h4 style="color: #667eea; font-size: 18px; margin-bottom: 10px;">
+                        💬 ¿Puedo hacer consultas durante el curso?
+                    </h4>
+                    <p style="color: #555; line-height: 1.6; margin: 0;">
+                        Sí, puedes enviar mensajes directos a través de la plataforma Udemy
+                        y recibirás respuesta personalizada.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <section id="sobre" style="background: #f8f9fa; padding: 80px 20px;">
+            <div style="max-width: 1100px; margin: 0 auto;">
+
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <p
+                        style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #667eea; font-weight: bold; margin-bottom: 10px;">
+                        El Laboratorio
+                    </p>
+                    <h2 style="font-size: 36px; margin-bottom: 15px; color: #1a1a1a;">
+                        Sobre Occupational Labs
+                    </h2>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; margin-bottom: 60px;">
+
+                    <div>
+                        <img src="jose-rojas-new.jpg" alt="José Rojas - Fundador"
+                            style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 28px; margin-bottom: 20px; color: #1a1a1a;">
+                            José Rojas
+                            <span
+                                style="display: block; font-size: 16px; color: #667eea; margin-top: 8px; font-weight: normal;">
+                                Fundador y Director
+                            </span>
+                        </h3>
+
+                        <p style="font-size: 17px; line-height: 1.8; color: #333; margin-bottom: 20px;">
+                            <strong>Terapeuta Ocupacional</strong> con más de una década integrando docencia,
+                            práctica clínica y gestión académica en entornos de educación superior y salud.
+                        </p>
+
+                        <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <p style="margin: 0 0 10px 0; font-size: 15px; color: #555;">
+                                <strong style="color: #667eea;">✓</strong> Magíster en Educación Superior
+                            </p>
+                            <p style="margin: 0 0 10px 0; font-size: 15px; color: #555;">
+                                <strong style="color: #667eea;">✓</strong> Especialización en IA aplicada a educación
+                            </p>
+                            <p style="margin: 0 0 10px 0; font-size: 15px; color: #555;">
+                                <strong style="color: #667eea;">✓</strong> Formación en espiritualidad aplicada
+                            </p>
+                            <p style="margin: 0; font-size: 15px; color: #555;">
+                                <strong style="color: #667eea;">✓</strong> Experiencia en docencia universitaria
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div
+                    style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+                    <h4 style="font-size: 24px; margin-bottom: 20px; color: #1a1a1a; text-align: center;">
+                        Nuestra Misión
+                    </h4>
+                    <p
+                        style="font-size: 17px; line-height: 1.8; color: #555; text-align: center; max-width: 800px; margin: 0 auto;">
+                        En Occupational Labs fusionamos <strong>educación, diseño, espiritualidad e IA</strong>
+                        para desarrollar soluciones que combinan sentido humano, innovación tecnológica y base
+                        académica sólida. Diseñamos herramientas, cursos y capacitaciones que transforman la
+                        forma en que los profesionales enseñan, intervienen y acompañan procesos de aprendizaje
+                        y cuidado.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contacto"
+            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 80px 20px; margin: 60px 0 0 0;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; color: white;">
+
+                <h2 style="font-size: 36px; margin-bottom: 20px;">
+                    ¿Tienes un proyecto en mente?
+                </h2>
+
+                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 40px; opacity: 0.95;">
+                    Ya sea que busques capacitación para tu institución, asesoría personalizada,
+                    o simplemente quieras conocer más sobre nuestros servicios, estamos aquí para ayudarte.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="mailto:contacto@occupationalabs.cl"
+                        style="background: white; color: #667eea; padding: 16px 35px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 8px; display: inline-block; transition: transform 0.2s;">
+                        📧 contacto@occupationalabs.cl
+                    </a>
+                    <a href="instituciones.html"
+                        style="background: rgba(255,255,255,0.2); color: white; padding: 16px 35px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 8px; border: 2px solid white; display: inline-block; transition: transform 0.2s;">
+                        Ver servicios institucionales →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <img src="logo.png" alt="Occupational Labs Logo"
+                style="margin: 0 auto 16px; width: 36px; height: 36px; display: block; border-radius: 50%; background: white; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <p>Occupational Labs</p>
+            <p style="margin: 16px 0;">
+                <a href="mailto:contacto@occupationalabs.cl"
+                    style="color: #0f766e; font-size: 0.95rem; font-weight: 500; text-decoration: none;">
+                    contacto@occupationalabs.cl
+                </a>
+            </p>
+            <small>© 2025. Formación y tecnología al servicio de una educación más humana.</small>
+        </footer>
 
 
-    <button class="back-to-top" id="backToTop" aria-label="Volver al inicio">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-    </button>
+        <button class="back-to-top" id="backToTop" aria-label="Volver al inicio">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
 
-    <script>
-        // Back to top button functionality
-        const backToTopButton = document.getElementById('backToTop');
-        const scrollThreshold = 300; // Show button after scrolling 300px
+        <script>
+            // Back to top button functionality
+            const backToTopButton = document.getElementById('backToTop');
+            const scrollThreshold = 300; // Show button after scrolling 300px
 
-        function updateBackToTopButton() {
-            if (window.pageYOffset > scrollThreshold) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
+            function updateBackToTopButton() {
+                if (window.pageYOffset > scrollThreshold) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
             }
-        }
 
-        // Check on scroll
-        window.addEventListener('scroll', updateBackToTopButton);
+            // Check on scroll
+            window.addEventListener('scroll', updateBackToTopButton);
 
-        // Smooth scroll to top when clicked
-        backToTopButton.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            // Smooth scroll to top when clicked
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
-        });
 
-        // Initial check on page load
-        updateBackToTopButton();
+            // Initial check on page load
+            updateBackToTopButton();
 
-        // === NEW: COUNTDOWN TIMER ===
-        (function () {
-            const targetDate = new Date("January 5, 2026 23:59:59").getTime();
-
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = targetDate - now;
-
-                if (distance < 0) {
-                    document.getElementById("countdown").innerHTML = "¡Oferta Finalizada!";
-                    return;
-                }
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-
-                // Update Card Timer
-                const cardTimer = document.getElementById("card-timer");
-                if (cardTimer) {
-                    cardTimer.innerText = `${days}d ${hours < 10 ? "0" + hours : hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
-                }
-            }
-
-            setInterval(updateCountdown, 1000);
-            updateCountdown(); // Initial call
-        })();
-    </script>
+            // === NEW: COUNTDOWN TIMER ===
+            // Removed as per request
+        </script>
 
 </body>
 
