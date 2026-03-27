@@ -131,6 +131,40 @@
             justify-content: space-between;
         }
 
+        /* Tooltips */
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .nav-logo {
             display: flex;
             align-items: center;
@@ -1251,17 +1285,17 @@
     <!-- TRUST MARQUEE -->
     <div class="marquee" style="background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 30px 0; overflow: hidden; position: relative; z-index: 5;">
         <div class="marquee-content" style="display: flex; gap: 60px; color: #94A3B8; font-weight: 700; letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase;">
-            <div class="marquee-item"><span class="icon">🎓</span> UDEMY</div>
+            <div class="marquee-item"><span class="icon">✨</span> INNOVACIÓN <span class="tooltip" data-tooltip="AI-Expert: Integración con Claude (Anthropic), Gemini (Google) y OpenAI" style="color:var(--primary);">[AI-EXPERT]</span></div>
+            <div class="marquee-item"><span class="icon">🎓</span> EDUCACIÓN UDEMY</div>
+            <div class="marquee-item"><span class="icon">💻</span> SOLUCIONES DIGITALES</div>
             <div class="marquee-item"><span class="icon">🏥</span> SALUD DIGITAL</div>
-            <div class="marquee-item"><span class="icon">💻</span> EDTECH LAB</div>
             <div class="marquee-item"><span class="icon">🧠</span> IA CONSCIENTE</div>
-            <div class="marquee-item"><span class="icon">✨</span> INNOVACIÓN</div>
             <!-- Duplicados para loop infinito -->
-            <div class="marquee-item"><span class="icon">🎓</span> UDEMY</div>
+            <div class="marquee-item"><span class="icon">✨</span> INNOVACIÓN <span class="tooltip" data-tooltip="AI-Expert: Integración con Claude (Anthropic), Gemini (Google) y OpenAI" style="color:var(--primary);">[AI-EXPERT]</span></div>
+            <div class="marquee-item"><span class="icon">🎓</span> EDUCACIÓN UDEMY</div>
+            <div class="marquee-item"><span class="icon">💻</span> SOLUCIONES DIGITALES</div>
             <div class="marquee-item"><span class="icon">🏥</span> SALUD DIGITAL</div>
-            <div class="marquee-item"><span class="icon">💻</span> EDTECH LAB</div>
             <div class="marquee-item"><span class="icon">🧠</span> IA CONSCIENTE</div>
-            <div class="marquee-item"><span class="icon">✨</span> INNOVACIÓN</div>
         </div>
     </div>
 
@@ -1277,8 +1311,7 @@
             <style>
                 .bento-grid {
                     display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: auto auto;
+                    grid-template-columns: repeat(2, 1fr);
                     gap: 24px;
                 }
                 .bento-item {
@@ -1299,17 +1332,6 @@
                     border-color: var(--primary);
                     background: rgba(255, 255, 255, 0.05);
                 }
-                .bento-item::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 100px;
-                    background: var(--gradient-primary);
-                    opacity: 0.05;
-                    border-radius: 0 0 0 100%;
-                }
                 .bento-icon {
                     width: 56px;
                     height: 56px;
@@ -1319,42 +1341,46 @@
                     align-items: center;
                     justify-content: center;
                     margin-bottom: 24px;
-                    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                     color: #60A5FA;
                 }
                 .bento-item h3 { font-size: 1.5rem; margin-bottom: 16px; color: #FFFFFF; }
-                .bento-item p { color: #94A3B8; margin-bottom: 32px; font-size: 1rem; flex-grow: 1; }
-                .bento-link { 
-                    font-weight: 700; 
-                    color: #60A5FA; 
-                    text-decoration: none; 
-                    display: inline-flex; 
-                    align-items: center; 
-                    gap: 8px;
-                    transition: gap 0.3s;
-                }
+                .bento-item p { color: #94A3B8; margin-bottom: 32px; font-size: 1rem; flex-grow: 1; line-height: 1.6; }
+                .bento-link { font-weight: 700; color: #60A5FA; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.3s; }
                 .bento-link:hover { gap: 12px; }
-                @media (max-width: 992px) { .bento-grid { grid-template-columns: 1fr; } }
+                @media (max-width: 902px) { .bento-grid { grid-template-columns: 1fr; } }
             </style>
 
             <div class="bento-grid">
+                <!-- Tarjeta 1: INNOVACIÓN -->
                 <div class="bento-item">
-                    <div class="bento-icon"><span class="material-icons">school</span></div>
-                    <h3>Cursos Online</h3>
-                    <p>Formación práctica y certificada en Innovación Digital aplicada a educación y salud. Aprende a tu ritmo con acceso de por vida.</p>
-                    <a href="#cursos" class="bento-link">Ver cursos <span class="material-icons">east</span></a>
+                    <div class="bento-icon"><span class="material-icons">auto_awesome</span></div>
+                    <h3>Innovación: AI-Expert</h3>
+                    <p>Integración avanzada de flujos de trabajo con <span class="tooltip" data-tooltip="Anthropic" style="color:#FFFFFF; border-bottom:1px dashed #60A5FA;">Claude</span>, <span class="tooltip" data-tooltip="Google" style="color:#FFFFFF; border-bottom:1px dashed #60A5FA;">Gemini</span> y <span class="tooltip" data-tooltip="OpenAI" style="color:#FFFFFF; border-bottom:1px dashed #60A5FA;">OpenAI</span> para la optimización de procesos académicos y administrativos.</p>
+                    <a href="#contacto" class="bento-link">Saber más <span class="material-icons">east</span></a>
                 </div>
+
+                <!-- Tarjeta 2: SOLUCIONES DIGITALES -->
                 <div class="bento-item">
-                    <div class="bento-icon"><span class="material-icons">lightbulb</span></div>
-                    <h3>Asesorías 1:1</h3>
-                    <p>Acompañamiento personalizado para integrar IA en tu práctica docente o clínica. Soluciones adaptadas a tu contexto técnico real.</p>
-                    <a href="#contacto" class="bento-link">Solicitar ahora <span class="material-icons">east</span></a>
+                    <div class="bento-icon"><span class="material-icons">laptop_mac</span></div>
+                    <h3>Soluciones Científicas</h3>
+                    <p>Ecosistema EdTech propietario que incluye <strong>Hiperclass</strong> para gestión de clases y <strong>TO Notes</strong>, la herramienta técnica definitiva para Terapia Ocupacional.</p>
+                    <a href="#cursos" class="bento-link">Explorar Ecosistema <span class="material-icons">east</span></a>
                 </div>
+
+                <!-- Tarjeta 3: SALUD DIGITAL -->
                 <div class="bento-item">
-                    <div class="bento-icon"><span class="material-icons">business</span></div>
-                    <h3>Capacitaciones Institucionales</h3>
-                    <p>Programas integrales para universidades y centros de salud. Transformamos la cultura digital de tu organización.</p>
-                    <a href="instituciones.html" class="bento-link">Saber más <span class="material-icons">east</span></a>
+                    <div class="bento-icon"><span class="material-icons">medical_services</span></div>
+                    <h3>Salud Digital</h3>
+                    <p>Puente entre la práctica clínica y la tecnología. Implementamos soluciones digitales que mejoran la calidad de atención y la gestión de datos en salud.</p>
+                    <a href="#contacto" class="bento-link">Ver implementación <span class="material-icons">east</span></a>
+                </div>
+
+                <!-- Tarjeta 4: IA CONSCIENTE -->
+                <div class="bento-item">
+                    <div class="bento-icon"><span class="material-icons">psychology</span></div>
+                    <h3>IA Consciente</h3>
+                    <p>Ética y espiritualidad aplicada a la IA. Cursos y talleres especializados en <strong>Salud y Espiritualidad</strong> disponibles en la plataforma internacional <strong>Udemy</strong>.</p>
+                    <a href="#talleres" class="bento-link">Ver workshops <span class="material-icons">east</span></a>
                 </div>
             </div>
         </div>
