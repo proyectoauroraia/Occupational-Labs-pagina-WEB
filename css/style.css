@@ -352,3 +352,68 @@ img {
     background: var(--gradient-primary);
     width: 0%;
 }
+
+/* === Responsive Workshop Card === */
+.workshop-card {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(20px);
+}
+.workshop-date-col {
+    background: var(--gradient-primary);
+    padding: 40px;
+    color: white;
+    text-align: center;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.workshop-info-col {
+    background: rgba(15, 23, 42, 0.8);
+    padding: 40px;
+    flex-grow: 1;
+}
+
+/* === Responsive Vision Grids === */
+.vision-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.bento-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .workshop-card {
+        flex-direction: column;
+    }
+    .workshop-date-col {
+        min-width: 100%;
+        padding: 24px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .workshop-date-col > div {
+        margin: 0 !important;
+    }
+    .workshop-info-col {
+        padding: 24px;
+    }
+    .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .bento-2col {
+        grid-template-columns: 1fr;
+    }
+}

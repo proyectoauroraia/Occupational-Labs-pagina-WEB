@@ -33,18 +33,21 @@
     <header id="main-header" class="header-fixed">
         <div id="progress-bar" class="progress-bar"></div>
         <div class="nav-container">
-            <a href="#" class="nav-logo">
+            <a href="index.html" class="nav-logo">
                 <img src="logo.png" alt="Occupational Labs">
                 <span class="gradient-text">Occupational Labs</span>
             </a>
-            <nav class="nav-links">
+            <div class="nav-links">
                 <a href="#servicios">Servicios</a>
                 <a href="#sobre">Visión</a>
                 <a href="#talleres">Talleres</a>
                 <a href="#cursos">Cursos</a>
                 <a href="#contacto">Contacto</a>
-            </nav>
-            <a href="#servicios" class="btn-nav">Servicios Digitales</a>
+                <a href="#servicios" class="btn-nav">Servicios Digitales</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span class="material-icons">menu</span>
+            </button>
         </div>
     </header>
 
@@ -190,8 +193,8 @@
             </div>
 
             <div style="max-width: 1000px; margin: 0 auto;">
-                <div class="workshop-card" style="border: 1px solid rgba(255, 255, 255, 0.1); display: flex; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); backdrop-filter: blur(20px);">
-                    <div class="workshop-date-col" style="background: var(--gradient-primary); padding: 40px; color: white; text-align: center; min-width: 200px; display: flex; flex-direction: column; justify-content: center;">
+                <div class="workshop-card">
+                    <div class="workshop-date-col">
                         <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Próximo Taller</span>
                         <div style="margin: 15px 0;">
                             <span style="font-size: 64px; font-weight: 800; line-height: 1;">19</span>
@@ -200,7 +203,7 @@
                         <span style="font-size: 1.1rem; font-weight: 500;">18:00 HRS CL</span>
                     </div>
 
-                    <div class="workshop-info-col" style="background: rgba(15, 23, 42, 0.8); padding: 40px; flex-grow: 1;">
+                    <div class="workshop-info-col">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
                             <h3 style="font-size: 2rem; color: #FFFFFF; margin: 0;">Taller: Modelo y Pauta HOPE</h3>
                             <span style="background: rgba(138, 43, 226, 0.2); color: #C77DFF; padding: 6px 16px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; border: 1px solid rgba(138, 43, 226, 0.3);">Cupos Limitados</span>
@@ -362,7 +365,7 @@
         <div style="position: absolute; width: 400px; height: 400px; background: var(--accent-glow); filter: blur(120px); bottom: 10%; right: -100px; opacity: 0.1; pointer-events: none;"></div>
 
         <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 10;">
-            <div style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: start;">
+            <div class="vision-grid">
                 
                 <!-- Left: Profile Image & Main Info -->
                 <div style="position: sticky; top: 100px;">
@@ -387,7 +390,7 @@
                         </p>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                    <div class="bento-2col">
                         <!-- Formación Destacada -->
                         <div class="bento-item" style="padding: 32px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
                             <h3 style="font-size: 1.2rem; color: white; margin-bottom: 20px;">Formación</h3>
