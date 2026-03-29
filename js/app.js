@@ -12,15 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Clonar links para el menú móvil
     const navLinks = document.querySelector(".nav-links");
-    if (navLinks) {
+    if (navLinks && mobileOverlay) {
+        mobileOverlay.innerHTML = ""; // Limpiar antes de poblar
         const clonedLinks = navLinks.cloneNode(true);
         mobileOverlay.appendChild(clonedLinks);
         
-        // Agregar botón de cierre opcional o simplemente cerrar al hacer click en un link
+        // Cerrar al hacer click en un link
         clonedLinks.querySelectorAll("a").forEach(link => {
             link.addEventListener("click", () => {
                 mobileOverlay.classList.remove("active");
                 document.body.style.overflow = "auto";
+                const menuToggle = document.querySelector(".menu-toggle");
+                if (menuToggle) menuToggle.innerHTML = '<span class="material-icons">menu</span>';
             });
         });
     }
