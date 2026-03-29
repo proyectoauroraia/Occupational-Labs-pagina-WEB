@@ -151,6 +151,7 @@ img {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 32px;
 }
 
@@ -161,7 +162,7 @@ img {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.85); /* Más brillante que el anterior */
     font-weight: 600;
     font-size: 0.95rem;
     transition: 0.3s;
