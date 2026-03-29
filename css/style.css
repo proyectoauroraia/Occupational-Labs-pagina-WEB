@@ -206,17 +206,18 @@ img {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1.5rem;
     width: 100%;
+    padding-top: 100px; /* Evita que choque con el header */
 }
 
 .navbar-mobile-overlay .nav-links a {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #FFFFFF;
     text-decoration: none;
     font-weight: 700;
     transition: all 0.3s ease;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 12px;
 }
 
