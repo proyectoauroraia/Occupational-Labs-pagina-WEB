@@ -82,6 +82,15 @@ img {
     }
 }
 
+.section-padding {
+    padding: 100px 24px;
+}
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 50px 24px;
+    }
+}
+
 .gradient-text {
     background: var(--gradient-text);
     -webkit-background-clip: text;
