@@ -1,0 +1,296 @@
+/**
+ * Occupational Labs - Main Stylesheet
+ * ----------------------------------
+ * Combina el sistema responsive con los estilos de marca específicos.
+ */
+
+:root {
+    /* Breakpoints */
+    --bp-sm: 640px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1280px;
+
+    /* Color Palette */
+    --primary: #0066FF;
+    --primary-glow: rgba(0, 102, 255, 0.4);
+    --accent: #8A2BE2;
+    --accent-glow: rgba(138, 43, 226, 0.4);
+    
+    /* Neutrals */
+    --bg-dark: #0F172A;
+    --bg-light: #1E293B;
+    --surface-dark: #1E293B;
+    --surface-light: rgba(255, 255, 255, 0.05);
+    
+    /* Text */
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #0066FF 0%, #8A2BE2 100%);
+    --gradient-text: linear-gradient(135deg, #C77DFF 0%, #8A2BE2 100%);
+    
+    /* Tokens */
+    --radius-bento: 24px;
+    --radius-full: 100px;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --shadow-premium: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* === Reset & Base === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+    .section-container {
+        padding: 60px 0;
+    }
+}
+
+.gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* === Header & Navigation === */
+.header-fixed {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 92%;
+    max-width: 1200px;
+    z-index: 99999;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 100px;
+    padding: 12px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-scrolled {
+    top: 10px;
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.nav-container {
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.nav-logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    padding: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .header-fixed { width: 95%; top: 10px; }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.btn-nav {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+/* === Responsive Mobile Menu === */
+.navbar-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-dark);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+}
+
+.navbar-mobile-overlay.active {
+    transform: translateX(0);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+}
+
+/* === Hero & Marquee === */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 24px 60px;
+    overflow: hidden;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    font-size: var(--fs-p);
+    color: var(--text-muted);
+    max-width: 700px;
+}
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    background: rgba(255,255,255,0.02);
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* === Bento Grid & Cards === */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 40px 0;
+}
+
+.bento-item {
+    background: var(--surface-light);
+    border-radius: var(--radius-bento);
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.4s;
+    height: 100%;
+}
+
+.bento-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    background: rgba(255,255,255,0.05);
+}
+
+/* === Utility Classes === */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn-main {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 3px;
+    background: var(--gradient-primary);
+    width: 0%;
+}

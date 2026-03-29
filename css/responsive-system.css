@@ -1,0 +1,152 @@
+/**
+ * Occupational Labs - Responsive Design System
+ * -------------------------------------------
+ * Arquitectura basada en variables (tokens), tipografía fluida y 
+ * layouts adaptables con CSS Grid y Flexbox.
+ */
+
+:root {
+    /* Breakpoints */
+    --bp-sm: 640px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1280px;
+
+    /* Color Palette (Electric/Premium) */
+    --primary: #0066FF;
+    --primary-glow: rgba(0, 102, 255, 0.4);
+    --accent: #8A2BE2;
+    --accent-glow: rgba(138, 43, 226, 0.4);
+    
+    /* Backgrounds */
+    --bg-dark: #0F172A;
+    --bg-light: #1E293B;
+    --surface: rgba(255, 255, 255, 0.05);
+    
+    /* Text */
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #0066FF 0%, #8A2BE2 100%);
+    --gradient-text: linear-gradient(135deg, #C77DFF 0%, #8A2BE2 100%);
+    
+    /* Spacing & Borders */
+    --radius-bento: 24px;
+    --radius-full: 100px;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --shadow-premium: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    
+    /* Fluid Typography (clamp based on viewport) */
+    --fs-h1: clamp(2.5rem, 8vw, 4.5rem);
+    --fs-h2: clamp(2rem, 5vw, 3rem);
+    --fs-h3: clamp(1.5rem, 4vw, 2rem);
+    --fs-p: clamp(1rem, 1.2vw, 1.2rem);
+}
+
+/* === Base & Resets === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* === Layout Utilities === */
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.grid-responsive {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === Generic Responsive Elements === */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-bento);
+}
+
+section {
+    padding: clamp(3rem, 10vh, 8rem) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* === Responsive Navbar Helper === */
+.navbar-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-mobile-overlay.active {
+    transform: translateY(0);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 100000;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Accessability & Focus */
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+}
