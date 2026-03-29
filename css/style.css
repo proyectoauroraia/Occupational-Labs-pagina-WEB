@@ -386,6 +386,12 @@ img {
     align-items: start;
 }
 
+.vision-sticky {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
 .bento-2col {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -412,6 +418,10 @@ img {
     .vision-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+    .vision-sticky {
+        position: relative;
+        top: 0;
     }
     .bento-2col {
         grid-template-columns: 1fr;
